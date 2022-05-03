@@ -1,0 +1,30 @@
+<div class="container m-4">
+    <h1 class="lead">HOME PAGE</h1>
+    <button type="submit" class="btn btn-outline-dark btn-sm rounded-0" (click)="edit = !edit" >
+        {{edit?"Close edit":"Edit"}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+          <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+      </svg>
+    </button>
+    <form class="w-50 mt-4">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label> <label for="name1" class="form-label" [hidden]="edit">: <b>{{data.name}}</b></label> 
+          <input type="text" class="form-control rounded-0" name="name" aria-describedby="emailHelp" [(ngModel)]="data.name"  [hidden]="!edit">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Occupation</label><label for="occu1" class="form-label" [hidden]="edit">: <b>{{data.occupation}}</b></label> 
+          <input type="text" class="form-control rounded-0" name="occu" aria-describedby="emailHelp" [(ngModel)]="data.occupation" [hidden]="!edit" >
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label><label for="email1" class="form-label" [hidden]="edit">: <b>{{data.email}}</b></label> 
+          <input type="email" class="form-control rounded-0" name="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="data.email" [hidden]="!edit" >
+          <div id="emailHelp" class="form-text" [hidden]="!edit">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label><label for="pass1" class="form-label" [hidden]="edit">: <b>{{data.password}}</b></label> 
+          <input type="text" class="form-control rounded-0" name="exampleInputPassword1" [(ngModel)]="data.password" [hidden]="!edit" >
+        </div>
+        <button type="submit" class="btn btn-info rounded-0" (click)="updateData()" [hidden]="!edit" >Update Data</button>
+      </form>
+
+</div>
